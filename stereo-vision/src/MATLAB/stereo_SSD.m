@@ -24,8 +24,9 @@ function disparityMap = stereo_SSD(leftImage, rightImage, maxDisparity)
             minssd = 65535;
             temp=0.0;
             offset = minDisparity;
+            ssd=0.0;
             for dispRange = minDisparity:maxDisparity,
-                ssd=0.0;
+                
                 t = -winRange:winRange;
                 if (j+winRange+dispRange <= width)
                     temp = rightImage(i+t,j+t)-leftImage(i+t,j+t+dispRange);
